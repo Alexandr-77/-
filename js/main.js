@@ -61,3 +61,14 @@ function formaS() {
   // mainFormSowe.innerHTML = "с(sdfdfs)";
   window.prompt()
 }
+
+// ===============================================
+
+// let animationNum = document.querySelector('#reliably__box');
+
+// animationNum.addEventListener('click', showAnimation);
+
+// function showAnimation() {
+  
+// }
+
