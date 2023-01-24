@@ -686,15 +686,16 @@ a {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px 15px;
+  gap: 25px 25px;
   margin-bottom: 50px;
 }
 .products__box-item {
   flex: 0 0 32%;
   flex-direction: column;
   display: flex;
-  background: #f4f4f4;
-
+  box-shadow: 2px 13px 40px #c3c3c3;
+  border-radius: 5px;
+  overflow: hidden;
 }
 .products__box-image {
    width: 100%;
@@ -725,6 +726,7 @@ height: 100%;
    line-height: 150%;
    font-weight: 500;
    text-align: left;
+   color: #5f5f5f;
 }
 .products__link {
    display: inline-flex;
@@ -1009,13 +1011,15 @@ height: 100%;
 
 /* ====== galari ====== */
 .galari {
-   padding: 75px 0;
+   padding: 50px 0;
+   background: var(--sr);
 }
 .galari__title {
    margin: 0px 0 50px;
    font-size: 40px;
    line-height: 110%;
    text-align: center;
+   color: var(--gold);
 }
 .galari__box {
    display: flex;
@@ -1059,7 +1063,6 @@ height: 100%;
   .galari__box a {
     width: 48%;
   }
-  
 }
 @media (max-width: 450px) {
   .galari {
