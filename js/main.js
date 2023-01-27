@@ -52,14 +52,25 @@ function rotateBurger() {
 }
 
 // ===========================================
-let btnTop = document.querySelector('.header__main-btn');
-let mainFormSowe = document.querySelector('.header__main');
 
-btnTop.addEventListener('click', formaS);
+let popapClose = document.querySelector('.popap__close');
+let popap = document.querySelector('.popap');
+let btnForma = document.querySelector('.header__main-btn');
+let btnFormaOtpravit = document.querySelector('.popap__btn');
 
-function formaS() {
-  // mainFormSowe.innerHTML = "с(sdfdfs)";
-  window.prompt()
+popapClose.addEventListener('click', closeF);
+btnForma.addEventListener('click', open);
+btnFormaOtpravit.addEventListener('click', otravka);
+
+function closeF() {
+  popap.style.display = "none";
+  console.log(popap);
+}
+function open() {
+  popap.style.display = "block";
+}
+function otravka() {
+  popap.style.display = "none";
 }
 
 // ===============================================
