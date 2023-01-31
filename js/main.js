@@ -1,36 +1,3 @@
-$('.class-mi').slick({
-   dots: true,
-   infinite: true,
-   speed: 300,
-   slidesToShow: 4,
-   slidesToScroll: 4,
-   responsive: [
-     {
-       breakpoint: 1024,
-       settings: {
-         slidesToShow: 3,
-         slidesToScroll: 3,
-         infinite: true,
-         dots: true
-       }
-     },
-     {
-       breakpoint: 600,
-       settings: {
-         slidesToShow: 2,
-         slidesToScroll: 2
-       }
-     },
-     {
-       breakpoint: 480,
-       settings: {
-         slidesToShow: 1,
-         slidesToScroll: 1
-       }
-     }
-   ]
- });
-
 
 // ================================================== 
 let burger = document.querySelector('.burger');
@@ -73,7 +40,37 @@ function otravka() {
   popap.style.display = "none";
 }
 
+
 // ===============================================
+// отправка формы =============>
+$(document).ready(function() {
+
+	//E-mail Ajax Send
+	$("form").submit(function() { //Change
+		var th = $(this);
+		$.ajax({
+			type: "POST",
+			url: "mail.php", //Change
+			data: th.serialize()
+		}).done(function() {
+			alert("Thank you!");
+			setTimeout(function() {
+				// Done Functions
+				th.trigger("reset");
+			}, 1000);
+		});
+		return false;
+	});
+
+});
+
+
+
+
+
+
+
+// ===================================
 
 // let animationNum = document.querySelector('#reliably__box');
 
