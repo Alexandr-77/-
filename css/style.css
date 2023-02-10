@@ -125,8 +125,8 @@ a {
 /* ======= Глобальные классы / ======= */
 
 /* ========= header ======== */
-
 /* ========= header__top ======== */
+
 .header__top {
   padding: 15px 0;
   background: var(--sr);
@@ -180,9 +180,8 @@ a {
   color: var(--bb);
 }
 /* ========= header__top /======== */
-
-/* .header {} */
 .header__wrap {
+  top: 80px;
   background: var(--color-dark);
   padding: 17px 0;
   /* min-height: 90px; */
@@ -506,6 +505,16 @@ a {
     .header__top {
     display: none;
   }
+  .header__wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+  .header__main {
+    height: 100vh;
+  }
   .header__block-nav {
     top: 74px;
   }
@@ -612,8 +621,25 @@ a {
   height: 60px;
   margin-bottom: 22px;
   padding: 20px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
 }
-
+/* input:invalid {
+  border: 1px solid red;
+} */
+input:valid {
+  border: 1px solid green;
+}
+input{
+  border: 1px solid var(--color-dark);
+}
+input:focus {
+  outline-color:  var(--gold);
+  /* border: 1px solid var(--koral) !important; */
+}
 
 .popap__btn {
   display: flex;
@@ -627,8 +653,14 @@ a {
   height: 60px;
   margin-top: 60px;
   background: var(--gold);
-  border: transparent;
-  border-radius: 7px;
+  border: var(--sm) solid 1px;
+
+
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
 }
 /* ======= */
 .popap__blago {
@@ -861,52 +893,59 @@ a {
   width: 370px;
   /* border: #ff7f50 1px solid; */
   margin: 0 20px 75px;
+  opacity: 0;
 }
-
+.element-show {
+  opacity: 1 !important;
+}
 .reliably__box-item:nth-child(1) {
-  animation-name: light-s;
+  /*animation-name: light-s;
   animation-delay: 1s;
   animation-fill-mode: forwards;
   animation-duration: 2s;
-  opacity: 0;
+  */transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
 }
 .reliably__box-item:nth-child(2) {
-  animation-name: light-s;
+  /*animation-name: light-s;
   animation-delay: 1.5s;
   animation-fill-mode: forwards;
   animation-duration: 2s;
-  opacity: 0;
+  */transition: all 2s ease;
 }
 .reliably__box-item:nth-child(3) {
-  animation-name: light-s;
+  /*animation-name: light-s;
   animation-delay: 2s;
   animation-fill-mode: forwards;
   animation-duration: 2s;
-  opacity: 0;
+  */transition: all 3s ease;
 }
 .reliably__box-item:nth-child(4) {
-  animation-name: light-s;
+  /*animation-name: light-s;
   animation-delay: 2.5s;
   animation-fill-mode: forwards;
   animation-duration: 2s;
-  opacity: 0;
+  */transition: all 4s ease;
 }
 .reliably__box-item:nth-child(5) {
-  animation-name: light-s;
+  /*animation-name: light-s;
   animation-delay: 3s;
   animation-fill-mode: forwards;
   animation-duration: 2s;
-  opacity: 0;
+  */transition: all 5s ease;
 }
 
-@keyframes light-s {
+/* @keyframes light-s {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
   }
-}
+} */
 
 .reliably__box-image {
   min-width: 150px;
@@ -1064,6 +1103,76 @@ a {
   }
 }
 /* ====== benefits /====== */
+
+/* ====== certificate ====== */
+.certificate {
+  padding: 80px 0;
+}
+.certificate__title {
+  margin: 0px 0 50px;
+  font-size: 40px;
+  line-height: 110%;
+  text-align: center;
+  color: var(--color-dark);
+}
+.certificate__box {
+  display: flex;
+  justify-content: center;
+}
+.certificate__box a {
+  max-width: 300px ;
+  margin: 0 20px;
+}
+/* ====== @media 1140 ====== */
+/* ====== @media 1140 ====== */
+/* ====== @media 1140 ====== */
+@media (max-width: 1140px) {
+  .certificate__box {
+    flex-wrap: wrap;
+  }
+  .certificate__box a {
+    max-width: 300px;
+    margin: 0 20px 30px 20px;
+  }
+}
+/* ====== @media 768 ====== */
+@media (max-width: 768px) {
+  .certificate__box a {
+    max-width: 300px;
+    margin: 0 5px 5px 5px;
+  }
+}
+/* ====== @media 650 ====== */
+@media (max-width: 650px) {
+  .certificate__box a {
+    max-width: 49%;
+    margin: 0 2px 5px 2px;
+  }
+}
+/* ====== @media 550 ====== */
+@media (max-width: 550px) {
+  .certificate {
+    padding: 50px 0 65px;
+  }
+  .certificate__title {
+    font-size: 8vw;
+    margin: 0px 0 30px;
+  }
+  .certificate__box a {
+    max-width: 49%;
+    margin: 0 2px 5px 2px;
+  }
+}
+@media (max-width: 450px) {
+  .certificate__ontainer {
+    padding: 0 5px;
+  }
+  .certificate__box a {
+    max-width: 48%;
+    margin: 0 1% 5px 1%;
+  }
+}
+/* ====== certificate /====== */
 
 /* ====== galari ====== */
 .galari {

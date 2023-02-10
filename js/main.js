@@ -2,9 +2,13 @@
 // ================================================== 
 let burger = document.querySelector('.burger');
 let nav = document.querySelector('.header__block-nav');
-
+let liHeader = document.querySelectorAll('.header__menu-item');
 
 burger.addEventListener('click', rotateBurger); 
+
+for(let i = 0; i < liHeader.length; i++ ) {
+	liHeader[i].addEventListener('click', rotateBurger);
+ }
 
 function rotateBurger() {
   
@@ -27,7 +31,7 @@ let btnFormaOtpravit = document.querySelector('.popap__btn');
 
 popapClose.addEventListener('click', closeF);
 btnForma.addEventListener('click', open);
-btnFormaOtpravit.addEventListener('click', otravka);
+// btnFormaOtpravit.addEventListener('click', otravka);
 
 function closeF() {
   popap.style.display = "none";
@@ -36,9 +40,9 @@ function closeF() {
 function open() {
   popap.style.display = "block";
 }
-function otravka() {
-  popap.style.display = "none";
-}
+// function otravka() {
+//   popap.style.display = "none";
+// }
 
 
 // ===============================================
@@ -53,7 +57,8 @@ $(document).ready(function() {
 			url: "mail.php", //Change
 			data: th.serialize()
 		}).done(function() {
-			alert("Thank you!");
+			popap.style.display = "none";
+			alert("Спасибо. Ваша заявка была отправлена. Наш менеджер свяжется с вами в течение 24 часов.");
 			setTimeout(function() {
 				// Done Functions
 				th.trigger("reset");
@@ -63,12 +68,32 @@ $(document).ready(function() {
 	});
 
 });
+// ============================
+
+let reliably = document.querySelector('.reliably');
 
 
+// window.addEventListener('scroll', function() {
+// if (reliably <= window.pageYOffset){
 
+// }
+// });
+// =============================
 
+function onEntry(entry) {
+entry.forEach(change => {
+	if (change.isIntersecting) {
+		change.target.classList.add('element-show');
+	}
+});
 
-
+}
+let options = { threshold: [0.5] };
+let observer = new IntersectionObserver(onEntry, options);
+let elements = document.querySelectorAll('.reliably__box-item');
+for (let elm of elements) {
+observer.observe(elm);
+}
 
 // ===================================
 
