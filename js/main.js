@@ -7,7 +7,9 @@ let liHeader = document.querySelectorAll('.header__menu-item');
 burger.addEventListener('click', rotateBurger); 
 
 for(let i = 0; i < liHeader.length; i++ ) {
-	liHeader[i].addEventListener('click', rotateBurger);
+	if (window.innerWidth < 990 ) {
+		liHeader[i].addEventListener('click', rotateBurger);
+	}
  }
 
 function rotateBurger() {
